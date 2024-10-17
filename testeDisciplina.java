@@ -5,7 +5,7 @@ public class testeDisciplina {
     String professor = JOptionPane.showInputDialog("Professor: ");
     int semestre = Integer.parseInt(JOptionPane.showInputDialog("Semestre: "));
     //Criando objeto Disciplina
-    disciplina disciplina = new disciplina(nome, professor, semestre);
+    Disciplina disciplina = new Disciplina(nome, professor, semestre);
     String msg = "Nome: " + disciplina.getNome() + "\nProfessor: "
     + disciplina.getProfessor() + "\nSemestre: " + disciplina.getSemestre();
     if(disciplina.getOfertada()) {
