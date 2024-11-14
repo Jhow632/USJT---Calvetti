@@ -1,31 +1,96 @@
-    public class Empregado extends PessoaFisica {
-        private double salario;
+public class Empregado 
+{
+    protected String nome;
+    protected double salario;
 
-        public Empregado() {
-            super();
-            this.salario = 0.0;
-        }
-    
-        public Empregado(String nome, String sobrenome, double d, double salario) {
-            super(nome, sobrenome, cpf, salario);
-            this.salario = salario;
-        }
-    
-        public Empregado(String nome, String sobrenome, String cpf, double salario2) {
-            //TODO Auto-generated constructor stub
-        }
-
-        public double getSalario() {
-            return salario;
-        }
-    
-        public void setSalario(double salario) {
-            this.salario = salario;
-        }
-    
-        public String dados() {
-            return super.dados() + ", Salário: R$ " + salario;
-        }
+    public Empregado(String nome, double salario) {
+        this.nome = nome;
+        this.salario = salario;
     }
-    
 
+    public Empregado(String nome2, String cpf, double salario2) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public String getTipo() {
+        return "Empregado";
+    }
+}
+
+public class Mensalista extends Empregado 
+{
+    public Mensalista(String nome, double salario) {
+        super(nome, salario);
+    }
+
+    @Override
+    public String getTipo() {
+        return "Mensalista";
+    }
+}
+
+public class Comissionado extends Empregado 
+{
+    private double comissao;
+
+    public Comissionado(String nome, double salario, double comissao) {
+        super(nome, salario);
+        this.comissao = comissao;
+    }
+
+    @Override
+    public String getTipo() {
+        return "Comissionado";
+    }
+
+    public double getComissao() {
+        return comissao;
+    }
+}
+
+
+class Horista extends Empregado 
+{
+    private int horasTrabalhadas;
+
+    public Horista(String nome, double salario, int horasTrabalhadas) {
+        super(nome, salario);
+        this.horasTrabalhadas = horasTrabalhadas;
+    }
+
+    @Override
+    public String getTipo() {
+        return "Horista";
+    }
+
+    public int getHorasTrabalhadas() {
+        return horasTrabalhadas;
+    }
+}
+
+public class Tarefeiro extends Empregado 
+{
+    private int tarefas;
+
+    public Tarefeiro(String nome, double salario, int tarefas) {
+        super(nome, salario);
+        this.tarefas = tarefas;
+    }
+
+    @Override
+    public String getTipo() {
+        return "Tarefeiro";
+    }
+
+    public int getTarefas() {
+        return tarefas;
+    }
+}
