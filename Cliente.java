@@ -1,16 +1,21 @@
-package Trabalho;
-
-public class Cliente{
-
+public class Cliente {
     private String nome;
-    private String cpf;
-    private ContaCorrente contaCorrente;
+    private String fone;
+    private int id;
 
-    public Cliente(String n, String c, ContaCorrente cc){
-        this.nome = n;
-        this.cpf = c;
-        this.contaCorrente = cc;
-    }  
+    public Cliente(int id, String nome, String fone) {
+        this.id = id;
+        this.nome = nome;
+        this.fone = fone;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -20,19 +25,16 @@ public class Cliente{
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getFone() {
+        return fone;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setFone(String fone) {
+        this.fone = fone;
     }
 
-    public ContaCorrente getContaCorrente() {
-        return contaCorrente;
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Nome: " + nome + ", Fone: " + fone;
     }
-
-    public void setContaCorrente(ContaCorrente contaCorrente) {
-        this.contaCorrente = contaCorrente;
-    }  
 }
